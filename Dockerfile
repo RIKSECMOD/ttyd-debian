@@ -22,7 +22,6 @@ RUN apt-get update; apt-get install -y --no-install-recommends \
         curl \
         htop \
 	git \
-	openvpn \
         net-tools \
         && apt-get autoclean \
         && apt-get autoremove \
