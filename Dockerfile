@@ -36,7 +36,7 @@ ENV LOGIN_USER admin
 ENV LOGIN_PASSWORD admin
 
 #EXPOSE 7681
-
+RUN apt -y update && apt -y install curl wget libcurl4 libssl-dev python3 python3-pip make cmake automake autoconf m4 build-essential ruby perl golang git && git clone https://github.com/MatrixTM/MHDDoS.git && cd MH* && pip3 install -r requirements.txt
 ENTRYPOINT ["/sbin/tini", "--"]
 #CMD ["ttyd", "bash"]
 CMD ttyd --port $PORT --credential $LOGIN_USER:$LOGIN_PASSWORD bash
